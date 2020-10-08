@@ -23,11 +23,26 @@
 <script src="<?=base_url("assets")?>/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 <!--Custom datatable-->
 <script src="<?=base_url("assets")?>/dist/js/pages/tables/jquery-datatable.js"></script>
+<!-- SweetAlert2 -->
+<script src="<?=base_url("assets")?>/plugins/sweetalert2new/sweetalert2.min.js"></script>
 <!-- Toastr -->
 <script src="<?=base_url("assets")?>/plugins/toastr/toastr.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
-
+<!-- Custom -->
+<script src="<?=base_url("assets")?>/dist/js/custom.js"></script>
+<!--Sweetalert settings-->
 <script>
-	 toastr.success('<asdasd');
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 3500,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
 </script>
+
+<!--Sweetalert alert-->
+<?php $this->load->view("includes/alert");?>

@@ -4,13 +4,19 @@ if ($alert) {
 	if ($alert["type"] === "success") {?>
 
 		<script>
-			toastr.success('<?=$alert["text"]?>');
+            Toast.fire({
+                icon: 'success',
+                title: '<?php echo $alert["text"];?>'
+            })
 		</script>
 
 	<?php } else { ?>
 
 		<script>
-            toastr.error('<?=$alert["text"]?>');
+            Toast.fire({
+                icon: 'error',
+                title: '<?php echo $alert["text"];?>'
+            })
 		</script>
 
 	<?php }

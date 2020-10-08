@@ -9,6 +9,7 @@
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?=base_url();?>">Anasayfa</a></li>
+						<li class="breadcrumb-item"><a href="<?=base_url("dashboard/users");?>">Kullanıcılar</a></li>
 						<li class="breadcrumb-item active">Kullanıcı Ekle</li>
 					</ol>
 				</div>
@@ -79,7 +80,17 @@
 									<input type="text" class="form-control"  name="userMail"  value="<?php echo isset($form_error) ? set_value("userMail") : ""?>">
 								</div>
 							</div>
+
 							<!-- /.form-group -->
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="ad">Unvan:</label>
+								<?php if(isset($form_error)) { ?>
+									<small class="input-form-error"><?php echo form_error("userUN"); ?></small>
+								<?php } ?>
+								<input type="text" class="form-control" name="userUN"  value="<?php echo isset($form_error) ? set_value("userUN") : ""?>">
+							</div>
 						</div>
 						<!-- /.col -->
 					</div>
@@ -124,12 +135,17 @@
 							</div>
 							<!-- /.form-group -->
 							<div class="form-group">
-								<label for="ad">Fakülte No:</label>
+								<label for="ad">Fakülte:</label>
 								<?php if(isset($form_error)) { ?>
 									<small class="input-form-error"><?php echo form_error("userF"); ?></small>
 								<?php } ?>
-								<input type="text" class="form-control" name="userF"  value="<?php echo isset($form_error) ? set_value("userF") : ""?>">
-							</div>
+									<select name="userF" class="form-control">
+										<option value="">----</option>
+										<?php foreach ( $fakulte as $fakulte) {?>
+											<option value="<?=$fakulte->id?>" <?php echo isset($form_error) ? option_result(set_value("userF"), $fakulte->id) : ""?>><?=$fakulte->fakulteKodu."-->".$fakulte->fakulteAdi?></option>
+										<?php } ?>
+									</select>
+								</div>
 						</div>
 						<!-- /.col -->
 						<div class="col-md-6">
@@ -151,8 +167,13 @@
 								<?php if(isset($form_error)) { ?>
 									<small class="input-form-error"><?php echo form_error("userB"); ?></small>
 								<?php } ?>
-								<input type="text" class="form-control" name="userB" value="<?php echo isset($form_error) ? set_value("userB") : ""?>">
-							</div>
+									<select name="userB" class="form-control">
+										<option value="">----</option>
+										<?php foreach ( $bolumler as $bolumler) {?>
+											<option value="<?=$bolumler->id?>" <?php echo isset($form_error) ? option_result(set_value("userB"), "") : ""?>><?=$bolumler->bolumKodu."-->".$bolumler->bolumAdi?></option>
+										<?php } ?>
+									</select>
+								</div>
 
 							<div class="form-group">
 								<label for="ad">Yetki:</label>
@@ -164,7 +185,7 @@
 										<span class="input-group-text"><i class="fas fa-key"></i></span>
 									</div>
 									<select name="userClass" class="form-control">
-										<option value="NULL"<?php echo isset($form_error) ? option_result(set_value("userClass"), "NULL") : ""?>>-----</option>
+										<option value=""<?php echo isset($form_error) ? option_result(set_value("userClass"), "") : ""?>>-----</option>
 										<option value="admin"<?php echo isset($form_error) ? option_result(set_value("userClass"), "admin") : ""?>>Admin</option>
 										<option value="user" <?php echo isset($form_error) ? option_result(set_value("userClass"), "user") : ""?>>Kullanıcı</option>
 									</select>
@@ -223,7 +244,7 @@
 			</div>
 				<div class="card-footer">
 					<div class="float-right">
-						<a href="<?php echo base_url("dashboard/index");?>"><button type="button" class="btn bg-gradient-secondary">Geri</button></a>
+						<a href="<?php echo base_url();?>"><button type="button" class="btn bg-gradient-secondary">Geri</button></a>
 						<button type="submit" class="btn bg-gradient-teal"><i class="fas fa-user-plus"></i> Ekle</button>
 					</div>
 				</div>
@@ -236,4 +257,3 @@
 	</section>
 	<!-- /.content -->
 </div>
-

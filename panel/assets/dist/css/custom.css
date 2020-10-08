@@ -83,7 +83,7 @@
 .dataTables_wrapper .dt-buttons {
 	float: left; }
 .dataTables_wrapper .dt-buttons a.dt-button {
-	background-color: #6f9a8d;
+	background-color: #05004e;
 	color: #fff;
 	padding: 7px 12px;
 	margin-right: 5px;
@@ -138,7 +138,7 @@
 	padding: 6px 12px;
 	margin-left: -1px;
 	line-height: 1.42857143;
-	color: #337ab7;
+	color: #05004e;
 	text-decoration: none;
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -172,8 +172,8 @@
 	z-index: 3;
 	color: #fff;
 	cursor: default;
-	background-color: #337ab7;
-	border-color: #337ab7;
+	background-color: #05004e;
+	border-color: #05004e;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -257,11 +257,11 @@ select[multiple].input-sm {
 }
 
 .switch label input[type=checkbox]:checked + .lever {
-	background-color: #84c7c1;
+	background-color: #4e9525;
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
-	background-color: #26a69a;
+	background-color: #2e5a1c;
 	left: 24px;
 }
 
@@ -439,7 +439,6 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 .butn-group .butn + .dropdown-toggle,
 .butn-group-vertical .butn + .dropdown-toggle {
 	border-left: 1px solid rgba(0, 0, 0, 0.08) !important; }
-
 
 .input-form-error{
 	color: #ee6e73;

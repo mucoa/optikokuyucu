@@ -23,7 +23,12 @@
 <!--Select-->
 <link rel="stylesheet" href="<?=base_url("assets")?>/plugins/select2/css/select2.min.css">
 <link rel="stylesheet" href="<?=base_url("assets")?>/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-<!--Custom-->
-<link rel="stylesheet" href="<?=base_url("assets")?>/dist/css/custom.css">
 <!-- JQuery DataTable Css -->
 <link href="<?=base_url("assets")?>/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="<?=base_url("assets")?>/plugins/sweetalert2new/sweetalert2.css" rel="stylesheet">
+<!-- Toastr -->
+<link rel="stylesheet" href="<?=base_url("assets")?>/plugins/toastr/toastr.min.css">
+<!--Custom-->
+<link rel="stylesheet" href="<?=base_url("assets")?>/dist/css/custom.css">
+
